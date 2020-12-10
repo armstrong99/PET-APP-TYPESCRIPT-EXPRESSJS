@@ -4,22 +4,25 @@ export const DOCUMENT_NAME = "Channel";
 
 export const COLLECTION_NAME = "channels";
 
-export const enum ChannelCode {
+export enum ChannelCode {
   DOG = "DOG",
   CAT = "CAT",
   GOAT = "GOAT",
   FISH = "FISH",
+  SNAIL = "SNAIL",
+  BIRD = "BIRD",
 }
 
 export default interface Channel extends Document {
-  name: string;
+  code: string;
   createdAt?: Date;
   updatedAt?: Date;
   status?: boolean;
+  imgUrl?: string;
 }
 
 const schema = new Schema({
-  name: {
+  code: {
     type: Schema.Types.String,
     required: true,
     enum: [
@@ -27,6 +30,8 @@ const schema = new Schema({
       ChannelCode.GOAT,
       ChannelCode.FISH,
       ChannelCode.CAT,
+      ChannelCode.SNAIL,
+      ChannelCode.BIRD
     ],
   },
   status: {
@@ -41,6 +46,10 @@ const schema = new Schema({
     type: Date,
     required: true,
   },
+  imgUrl: {
+    type: Schema.Types.String,
+    required: true
+  }
 });
 
 export const ChannelModel = model<Channel>(

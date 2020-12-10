@@ -1,18 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChannelModel = exports.COLLECTION_NAME = exports.DOCUMENT_NAME = void 0;
+exports.ChannelModel = exports.ChannelCode = exports.COLLECTION_NAME = exports.DOCUMENT_NAME = void 0;
 const mongoose_1 = require("mongoose");
 exports.DOCUMENT_NAME = "Channel";
 exports.COLLECTION_NAME = "channels";
+var ChannelCode;
+(function (ChannelCode) {
+    ChannelCode["DOG"] = "DOG";
+    ChannelCode["CAT"] = "CAT";
+    ChannelCode["GOAT"] = "GOAT";
+    ChannelCode["FISH"] = "FISH";
+    ChannelCode["SNAIL"] = "SNAIL";
+    ChannelCode["BIRD"] = "BIRD";
+})(ChannelCode = exports.ChannelCode || (exports.ChannelCode = {}));
 const schema = new mongoose_1.Schema({
-    name: {
+    code: {
         type: mongoose_1.Schema.Types.String,
         required: true,
         enum: [
-            "DOG" /* DOG */,
-            "GOAT" /* GOAT */,
-            "FISH" /* FISH */,
-            "CAT" /* CAT */,
+            ChannelCode.DOG,
+            ChannelCode.GOAT,
+            ChannelCode.FISH,
+            ChannelCode.CAT,
+            ChannelCode.SNAIL,
+            ChannelCode.BIRD
         ],
     },
     status: {
@@ -27,5 +38,9 @@ const schema = new mongoose_1.Schema({
         type: Date,
         required: true,
     },
+    imgUrl: {
+        type: mongoose_1.Schema.Types.String,
+        required: true
+    }
 });
 exports.ChannelModel = mongoose_1.model(exports.DOCUMENT_NAME, schema, exports.COLLECTION_NAME);

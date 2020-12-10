@@ -4,8 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const signupMid_1 = __importDefault(require("../../middlewares/access/signupMid"));
-const signupContrl_1 = __importDefault(require("../../controllers/access/signupContrl"));
-const router = express_1.default.Router();
-router.post("/basic", signupMid_1.default, signupContrl_1.default);
+const listChannels_1 = __importDefault(require("../../controllers/Profile/listChannels"));
+let router = express_1.default.Router();
+router.post('/all', listChannels_1.default);
 exports.default = router;
