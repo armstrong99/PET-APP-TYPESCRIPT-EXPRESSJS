@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\Robotics\\Desktop\\ts-mern\\dist\\logs\\.9a145bfe86cf1fe2d3c71787d3d71b5426324c81-audit.json",
+    "files": [
+        {
+            "date": 1607572508575,
+            "name": "C:\\Users\\Robotics\\Desktop\\ts-mern\\dist\\logs\\2020-12-10.log",
+            "hash": "37396fd45b7a9d166ec48768f55ceadc"
+        }
+    ]
+}

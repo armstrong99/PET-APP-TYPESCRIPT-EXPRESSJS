@@ -1,0 +1,29 @@
+{
+  "name": "ts-mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-node ./lib/server.ts",
+    "main": "./dist/server.js",
+    "dev": "tsc -w",
+    "start": "nodemon ./dist/server.js",
+    "prod": "tsc && nodemon ./dist/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.9",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.11.5",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
+  }
+}
